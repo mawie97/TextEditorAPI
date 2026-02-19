@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: text_editor_db
+    environment:
+      POSTGRES_DB: texteditor
+      POSTGRES_USER: texteditor
+      POSTGRES_PASSWORD: texteditor
+    ports:
+      - "5432:5432"
+    volumes:
+      - text_editor_pgdata:/var/lib/postgresql/data
+
+volumes:
+  text_editor_pgdata:
