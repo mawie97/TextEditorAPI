@@ -11,5 +11,18 @@ services:
     volumes:
       - text_editor_pgdata:/var/lib/postgresql/data
 
+
+  api:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/texteditor
+      DB_USER: texteditor
+      DB_PASSWORD: texteditor
+    ports:
+      - "8080:8080"
+
+
 volumes:
   text_editor_pgdata:
