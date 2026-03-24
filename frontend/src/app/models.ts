@@ -1,0 +1,43 @@
+export interface DocumentSummary {
+  id: string;
+  title: string;
+}
+
+export interface Document {
+  id: string;
+  title: string;
+  text: string;
+  cursor: number;
+  anchor: number;
+  preferredColumn: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Command {
+  type: CommandType;
+  text?: string;
+  pos?: number;
+  }
+
+export type CommandType =
+  | 'INSERT'
+  | 'UNDO'
+  | 'REDO'
+  | 'MOVE_LEFT'
+  | 'MOVE_RIGHT'
+  | 'MOVE_UP'
+  | 'MOVE_DOWN'
+  | 'MOVE_LINE_START'
+  | 'MOVE_LINE_END'
+  | 'DELETE_LEFT'
+  | 'DELETE_RIGHT'
+  | 'SET_CURSOR'
+  | 'SET_CURSOR_SELECTION'
+  | 'MOVE_LEFT_SELECTION'
+  | 'MOVE_RIGHT_SELECTION'
+  | 'MOVE_UP_SELECTION'
+  | 'MOVE_DOWN_SELECTION'
+  | 'MOVE_LINE_START_SELECTION'
+  | 'MOVE_LINE_END_SELECTION';
+

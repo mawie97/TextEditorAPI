@@ -1,0 +1,8 @@
+<div class="container">
+  @if (document()) {
+    <h1>{{ document()!.title }}</h1>
+    <textarea #editor [value]="document()!.text" (keydown)="onKeyDown($event)"></textarea>
+  } @else {
+    <p>Loading...</p>
+  }
+</div>

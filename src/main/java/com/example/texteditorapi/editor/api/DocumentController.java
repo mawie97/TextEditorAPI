@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/documents")
+@RequestMapping("api/documents")
+@CrossOrigin
 public final class DocumentController {
 
     private final DocumentService service;

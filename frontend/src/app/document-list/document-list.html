@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Documents</h1>
+  <div class="create-form">
+    <input #titleInput type="text" placeholder="Title" />
+    <input #textInput type="text" placeholder="Text" />
+    <button (click)="createDocument(titleInput.value, textInput.value)">Create</button>
+  </div>
+  <ul>
+    @for(document of documents(); track document.id) {
+      <li>
+        <a [routerLink]="['/documents', document.id]">{{document.title}}</a>
+      </li>
+    }
+  </ul>
+</div>
