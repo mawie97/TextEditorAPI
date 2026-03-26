@@ -54,6 +54,8 @@ export class DocumentEditor implements OnInit{
       command = { type: 'MOVE_LINE_END_SELECTION' };
     } else if (event.key === 'End') {
       command = { type: 'MOVE_LINE_END' };
+    } else if (event.key === 'Enter') {
+      command = { type: 'INSERT', text: '\n'};
     } else if (event.key.length === 1) {
       command = { type: 'INSERT', text: event.key };
     } else {
